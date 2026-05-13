@@ -48,6 +48,8 @@ resource "digitalocean_firewall" "firewall" {
   for_each = var.firewalls
   name = replace( each.key, "_", "-" )
 
+  tags = each.value.tags
+
   dynamic "inbound_rule" {
     for_each = var.firewalls[each.key].ingress_rules
     content {
