@@ -16,6 +16,7 @@ variable "firewalls" {
       destination_load_balancer_uids = optional(list(string))
       destination_kubernetes_ids = optional(list(string))
     })))
+    tags = optional(list(string))
   }))
   description = "Firewall definitions"
   default = {}
