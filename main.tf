@@ -17,6 +17,13 @@ resource "digitalocean_container_registry" "docr" {
 }
 
 #####################################################################
+# PROJECT INFORMATION
+#####################################################################
+data "digitalocean_project" "current" {
+  name = var.project_name
+}
+
+#####################################################################
 # SSH KEYS
 #####################################################################
 resource "digitalocean_ssh_key" "ssh_keys" {
