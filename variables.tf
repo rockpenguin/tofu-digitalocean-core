@@ -22,6 +22,12 @@ variable "firewalls" {
   default = {}
 }
 
+variable "project_name" {
+  type = string
+  description = "Project name to retrieve project ID"
+  default = ""
+}
+
 variable "registries" {
   type = map(object({
     name = string
