@@ -50,7 +50,12 @@ variable "tags" {
 }
 
 variable "vpc_map" {
-  type = map
   description = "Map of VPC Data [region, CIDR]"
   default = {}
+  type = map(object({
+    name = string
+    region = string
+    cidr = optional(string)
+    description = optional(string)
+  }))
 }
