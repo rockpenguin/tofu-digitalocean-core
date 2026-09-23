@@ -43,9 +43,9 @@ resource "digitalocean_ssh_key" "ssh_keys" {
 ##############################
 resource "digitalocean_vpc" "vpcs" {
   for_each = var.vpc_map
-  name = replace(each.key, "_", "-")
-  region = each.value[0]
-  ip_range = each.value[1]
+  name = replace(each.value.name, "_", "-")
+  region = each.value.region
+  ip_range = each.value.cidr
 }
 
 ##############################
